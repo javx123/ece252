@@ -99,11 +99,12 @@ int main(int argc, char *argv[]) {
   if (argc != 2) {
     fprintf(stderr, "Inproper command format. Proper Syntax: %s <directory name>\n", argv[0]);
     return 0;
-  } else {
-    bool containsPNG = false;
-    checkForPNG(argv[1], &containsPNG);
-    if (!containsPNG) printf("findpng: No PNG file found\n");
   }
+
+  bool containsPNG = false;
+  checkForPNG(argv[1], &containsPNG);
+
+  if (!containsPNG) printf("findpng: No PNG file found\n");
 
   return 0;
 }
